@@ -1,0 +1,41 @@
+<!-- cliente.component.html -->
+<div class="registro-y-listado">
+    <!-- Sección de Registro de Cliente -->
+    <div class="registro-cliente">
+      <h2>Crear Vehiculo</h2>
+      <label for="txtCedula">Placa:</label>
+      <input id="txtCedula" [(ngModel)]="vehiculo.placa" />
+      <br />
+      <label for="txtNombre">Marca:</label>
+      <input id="txtNombre" [(ngModel)]="vehiculo.marca" />
+      <br />
+      <br />
+      <label for="txtNombre">Modelo:</label>
+      <input id="txtNombre" [(ngModel)]="vehiculo.modelo" />
+      <br />
+      <label for="txtDireccion">Año:</label>
+      <input id="txtDireccion" [(ngModel)]="vehiculo.anio" />
+      <br />
+      <br />
+      <label for="txtTelefono">Tipo:</label>
+      <input id="txtTelefono" [(ngModel)]="vehiculo.tipo" />
+      <br />
+      <br />
+      <label for="txtTelefono">Propietario:</label>
+      <input id="txtTelefono" [(ngModel)]="vehiculo.propietario" />
+      <br />
+      <br />
+      <button (click)="guardar()">Guardar</button>
+    </div>
+  
+    <!-- Sección de Listado de Clientes -->
+    <div class="listado-cliente">
+      <h2>Listado de Vehiculos</h2>
+      <ul>
+        <li *ngFor="let vehiculo of vehiculoService.listar()">
+          {{ vehiculo.placa }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
